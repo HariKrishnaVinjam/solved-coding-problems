@@ -16,15 +16,11 @@ class Solution:
 	    
 	    for i in range(1,k):
 	        if i in d:
-	            while d[i]>0:
-	                d[i] -= 1
-	                if k-i in d:
-	                    if d[k-i]>0:
-	                        d[k-i] -= 1
-	                    else:
-	                        return False
-	                else:
+	            if k-i in d:
+	                if d[i] != d[k-i]:
 	                    return False
+	            else:
+	                return False
 	    return True
 
 
